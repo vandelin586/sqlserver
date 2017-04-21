@@ -1,0 +1,15 @@
+{
+  "name": "vandelin586-sql",
+  "version": "0.1.0",
+  "author": "vandelin",
+  "summary": "Ensure SQL server is installed",
+  "license": "Apache-2.0",
+  "source": "https://github.com/vandelin586/sqlserver",
+  "project_page": "https://github.com/vandelin586/sqlserver",
+  "issues_url": "https://github.com/vandelin586/sqlserver",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
