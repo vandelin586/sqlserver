@@ -9,7 +9,7 @@ class winsqlserver::install {
     features                => ['SQL'],
     source                  => 'c:/temp',
     sql_sysadmin_accounts   => ['myuser'],
-  },
+  }
 }
 
 
