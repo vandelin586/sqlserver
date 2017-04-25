@@ -1,4 +1,4 @@
-class sqlserver:service {
+class winsqlserver:service {
 
 
 }

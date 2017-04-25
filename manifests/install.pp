@@ -1,5 +1,5 @@
 
-class sql::install {
+class winsqlserver::install {
 
   # Ensure .NET3.5 is installled
   windowsfeature { 'NET-Framework-Core':

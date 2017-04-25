@@ -42,11 +42,11 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class sql {
+class winsqlserver {
 
 
 
 
-class {'::sql::install':}
+class {'::winsqlserver::install':}
 
 }
