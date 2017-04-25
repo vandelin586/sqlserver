@@ -40,7 +40,7 @@
 # Copyright
 # ---------
 #
-# Copyright 2017 Your name here, unless otherwise noted.
+# Copyright 2017 AutoStructure
 #
 class winsqlserver {
 
