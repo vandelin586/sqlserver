@@ -49,8 +49,9 @@ class winsqlserver::install {
 #    features => ['IS', 'MDS', 'SSMS'],
 #    install_switches   => {
 #    'UpdateEnabled'  => 0,
-    }
-  }
+    #}
+    #}
+
 
 #}
 
