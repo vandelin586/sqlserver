@@ -42,7 +42,10 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class sql {
+class sqlserver {
 
 
+
+
+class {'::sqlserver::install':}
 }
