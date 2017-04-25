@@ -46,7 +46,5 @@ class sqlserver {
 
 
 
-
-class {'::sqlserver::install':}
-
 }
+class {'::sqlserver::install':}
