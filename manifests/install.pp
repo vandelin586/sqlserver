@@ -1,15 +1,15 @@
 
-class sqlserver::install {
+class sql::install {
 
   # Ensure .NET3.5 is installled
   windowsfeature { 'NET-Framework-Core':
     ensure => present,
-   } ->
+   }
   sqlserver_instance{ 'MSSQLSERVER':
     features                => ['SQL'],
     source                  => 'c:/temp',
     sql_sysadmin_accounts   => ['myuser'],
-  }
+  },
 }
 
 
