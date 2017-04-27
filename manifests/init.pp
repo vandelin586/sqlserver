@@ -46,6 +46,6 @@ class winsqlserver {
 
 class {'::winsqlserver::install':}
 
-adding bunk line
+
 
 }
