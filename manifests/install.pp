@@ -10,7 +10,7 @@ class winsqlserver::install {
     ensure                => 'present',
     features              => ['SQL'],
     source                => 'c:/temp',
-    sql_sysadmin_accounts => ['myuser'],
+    sql_sysadmin_accounts => ['administrator'],
   }
 }
 
