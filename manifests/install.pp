@@ -8,7 +8,7 @@ class winsqlserver::install {
 }
   sqlserver_instance{ 'MSSQLSERVER':
     ensure                => 'present',
-    features              => ['FullText','SQLEngine'],
+    features              => ['SQL'],
     source                => 'c:/temp',
     sql_sysadmin_accounts => ['myuser'],
   }
