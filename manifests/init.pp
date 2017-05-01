@@ -44,6 +44,7 @@
 #
 class winsqlserver {
 
+notify {"Running with app ${::sqlenv} ID defined":}
 class {'::winsqlserver::install':}
 
 
