@@ -44,7 +44,7 @@
 #
 class winsqlserver {
 
-notify {"${::trusted.extensions.pp_application}ID defined":}
+notify {"${::trusted.extensions.application}ID defined":}
 
 class {'::winsqlserver::install':}
 
