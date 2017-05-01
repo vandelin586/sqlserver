@@ -44,7 +44,7 @@
 #
 class winsqlserver {
 
-notify { Facter.value('trusted['certname']')}
+notify {$trusted}
 
 class {'::winsqlserver::install':}
 
