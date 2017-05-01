@@ -44,7 +44,7 @@
 #
 class winsqlserver {
 
-notify {"Running with app "${::trusted.extensions.pp_application}/${::trusted.extensions.pp_apptier}":}
+notify {"Running with app ${::trusted.extensions.pp_application}/${::trusted.extensions.pp_apptier}":}
 class {'::winsqlserver::install':}
 
 
