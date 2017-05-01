@@ -44,7 +44,7 @@
 #
 class winsqlserver {
 
-notify {$::pp_application}
+notify { "I am using app fact ${facts['pp_application']}": }
 
 class {'::winsqlserver::install':}
 
