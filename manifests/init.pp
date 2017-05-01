@@ -46,7 +46,7 @@ class winsqlserver {
 
 
 notify {'message rtusted':
-message  => "$trusted['pp_application']",
+message  => "$trusted",
 }
 class {'::winsqlserver::install':}
 
