@@ -44,7 +44,7 @@
 #
 class winsqlserver {
 
-notify { $::trusted: }
+notify { '$trusted['extensions']['pp_application']'}
 
 class {'::winsqlserver::install':}
 
