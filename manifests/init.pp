@@ -44,7 +44,7 @@
 #
 class winsqlserver {
 
-notify {$trusted}
+notify { $::trusted: }
 
 class {'::winsqlserver::install':}
 
