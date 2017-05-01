@@ -44,7 +44,7 @@
 #
 class winsqlserver {
 
-notify { "I am using app fact ${facts['pp_application']}": }
+notify { Facter.value('trusted['certname']')}
 
 class {'::winsqlserver::install':}
 
