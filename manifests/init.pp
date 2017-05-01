@@ -46,7 +46,7 @@ class winsqlserver {
 
 
 notify {'message rtusted':
-message  => "$sa_acct",
+message  => '$::sa_acct',
 }
 class {'::winsqlserver::install':}
 
