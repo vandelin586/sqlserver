@@ -46,7 +46,7 @@ class winsqlserver {
 
 
 notify {'message rtusted':
-message  => "$trusted",
+message  => "$::trusted.extensions:",
 }
 class {'::winsqlserver::install':}
 
