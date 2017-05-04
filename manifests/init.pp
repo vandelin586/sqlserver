@@ -1,4 +1,4 @@
-# Class: sql
+# Class: winsqlserver
 # ===========================
 #
 # Full description of class sql here.
@@ -28,7 +28,7 @@
 # --------
 #
 # @example
-#    class { 'sql':
+#    class { 'winsqlserver':
 #      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
 #    }
 #
