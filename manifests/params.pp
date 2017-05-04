@@ -73,9 +73,9 @@ class profile::sqlserver::params_base {
 
   # Set the default sa accout with the appropriate AD group
   case $environment {
-    'DEV':   { $sa_acct = ['EDC\P_CIOX_DEV_DBAdmin_FS_Role'] }
-    'TST':   { $sa_acct = ['EDC\P_CIOX_TST_DBAdmin_FS_Role'] }
-    'PRD':   { $sa_acct = ['EDC\P_CIOX_PRD_DBAdmin_FS_Role'] }
+    'DEV':   { $sa_acct = ['xxx\xxxDEV_DBAdmin_xx_Role'] }
+    'TST':   { $sa_acct = ['xxx\xxxTST_DBAdmin_xx_Role'] }
+    'PRD':   { $sa_acct = ['xxx\xxxPRD_DBAdmin_xx_Role'] }
     default: { $sa_acct = ['PE-201642-WIN20\vagrant'] } # DEV testing default
   }
 
