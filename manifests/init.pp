@@ -1,4 +1,4 @@
-# Class: winsqlserver
+# Class: sql
 # ===========================
 #
 # Full description of class sql here.
@@ -28,7 +28,7 @@
 # --------
 #
 # @example
-#    class { 'winsqlserver':
+#    class { 'sql':
 #      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
 #    }
 #
@@ -42,7 +42,14 @@
 #
 # Copyright 2017 AutoStructure
 #
-class winsqlserver {
+class winsqlserver (
+  String $sqluseracct,
+  string $sqlsource,
+  array $instance,
+  string $sqlsvcacct,
+  string $sqlsvcpass,
+){
+
 
 class {'::winsqlserver::install':}
 

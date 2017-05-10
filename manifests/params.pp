@@ -46,38 +46,38 @@
 #
 # Copyright 2017 Jay Weaver, US Forest Service.
 #
-class profile::sqlserver::params_base {
-  $host_name        = 'pe-201642-win2012r2-nocm'
-  $instance         = 'TEST'
-  $source           = 'C:/DBA/Software'
-  $features         = ['FullText', 'SQLEngine']
-  $sec_mode         = undef
-  $enable_tcp       = '1'
-  $svc_acct         = 'SQLServiceAccount'
-  $svc_pwd          = 'p@ssw0rd1234'
-  $sql_ver          = 'SQL_2012'
-  $dir_inst         = 'C:\\Program Files\\Microsoft SQL Server'
-  $dir_share        = 'C:\\Program Files\\Microsoft SQL Server'
-  $dir_wow          = 'C:\\Program Files (x86)\\Microsoft SQL Server'
+class winsqlserver::params {
+  #$host_name        = 'pe-201642-win2012r2-nocm'
+  #$instance         = 'TEST'
+  #$source           = 'C:/DBA/Software'
+  #$features         = ['FullText', 'SQLEngine']
+  #$sec_mode         = undef
+  #$enable_tcp       = '1'
+  #$svc_acct         = 'SQLServiceAccount'
+  #$svc_pwd          = 'p@ssw0rd1234'
+  #$sql_ver          = 'SQL_2012'
+  #$dir_inst         = 'C:\\Program Files\\Microsoft SQL Server'
+  #$dir_share        = 'C:\\Program Files\\Microsoft SQL Server'
+  #$dir_wow          = 'C:\\Program Files (x86)\\Microsoft SQL Server'
 #  $dir_data         = 'E:\\Program Files\\Microsoft SQL Server'
 #  $dir_log          = "G:\\Program Files\\Microsoft SQL Server\\MSSQL11.${instance}\\MSSQL\\DATA"
 #  $dir_backup       = "F:\\Program Files\\Microsoft SQL Server\\MSSQL11.${instance}\\MSSQL\\Backup"
 #  $dir_tmp          = "G:\\Program Files\\Microsoft SQL Server\\MSSQL11.${instance}\\MSSQL\\TempDB"
-  $dir_data         = 'H:\\Program Files\\Microsoft SQL Server'
-  $dir_log          = "I:\\Program Files\\Microsoft SQL Server\\MSSQL11.${instance}\\MSSQL\\DATA"
-  $dir_backup       = "I:\\Program Files\\Microsoft SQL Server\\MSSQL11.${instance}\\MSSQL\\Backup"
-  $dir_tmp          = "J:\\Program Files\\Microsoft SQL Server\\MSSQL11.${instance}\\MSSQL\\TempDB"
-  $postinstall      = 'C:/DBA/Post_Installation_Scripts/SQL_2012_PostInstall.ps1'
-  $environment      = undef   # This is ONLY for testing.
-  $app_adm_acct     = 'Application Admin Group'
+  #$dir_data         = 'H:\\Program Files\\Microsoft SQL Server'
+  #$dir_log          = "I:\\Program Files\\Microsoft SQL Server\\MSSQL11.${instance}\\MSSQL\\DATA"
+  #$dir_backup       = "I:\\Program Files\\Microsoft SQL Server\\MSSQL11.${instance}\\MSSQL\\Backup"
+  #$dir_tmp          = "J:\\Program Files\\Microsoft SQL Server\\MSSQL11.${instance}\\MSSQL\\TempDB"
+  #$postinstall      = 'C:/DBA/Post_Installation_Scripts/SQL_2012_PostInstall.ps1'
+  #$environment      = undef   # This is ONLY for testing.
+  #$app_adm_acct     = 'Application Admin Group'
 
   # Set the default sa accout with the appropriate AD group
-  case $environment {
-    'DEV':   { $sa_acct = ['xxx\xxxDEV_DBAdmin_xx_Role'] }
-    'TST':   { $sa_acct = ['xxx\xxxTST_DBAdmin_xx_Role'] }
-    'PRD':   { $sa_acct = ['xxx\xxxPRD_DBAdmin_xx_Role'] }
-    default: { $sa_acct = ['PE-201642-WIN20\vagrant'] } # DEV testing default
-  }
+  #case $environment {
+#    'DEV':   { $sa_acct = ['xxx\xxxDEV_DBAdmin_xx_Role'] }
+#    'TST':   { $sa_acct = ['xxx\xxxTST_DBAdmin_xx_Role'] }
+#    'PRD':   { $sa_acct = ['xxx\xxxPRD_DBAdmin_xx_Role'] }
+#    default: { $sa_acct = ['PE-201642-WIN20\vagrant'] } # DEV testing default
+#  }
 
   # Do ANY instances exist?
   if $::facts['sqlserver_instances'] != undef {
