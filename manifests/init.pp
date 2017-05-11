@@ -50,6 +50,13 @@ class winsqlserver (
   string $sqlsvcpass,
   string $tcpopt,
   string $instdir,
+  string $sqlshrfol,
+  string $sqlshrwow,
+  string $sqldatadir,
+  string $sqldirlog,
+  string $sqlbackdir,
+
+
 
 
 ){
