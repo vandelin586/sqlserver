@@ -1,17 +1,35 @@
 
 #Ensure .NET and SQL are installed
-class winsqlserver::install {
+class winsqlserver::install (
+
+
+
+
+
+  ) {
 
   # Ensure .NET3.5 is installled
   windowsfeature { 'NET-Framework-Core':
     ensure => present,
 }
-  sqlserver_instance{ 'MSSQLSERVER':
-    ensure                => 'present',
-    features              => ['SQL'],
-    source                => 'c:/temp',
-    sql_sysadmin_accounts => ['administrator'],
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+#sqlserver_instance{ 'MSSQLSERVER':
+#  ensure                => 'present',
+#  features              => ['SQL'],
+#  source                => 'c:/temp',
+#  sql_sysadmin_accounts => ['administrator'],
+}
 }
 
 

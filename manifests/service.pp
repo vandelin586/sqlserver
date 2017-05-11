@@ -1,5 +1,5 @@
-#service 
-class winsqlserver:service {
+#service
+class winsqlserver::service {
 
 
 }
