@@ -48,6 +48,10 @@ class winsqlserver (
   array $instance,
   string $sqlsvcacct,
   string $sqlsvcpass,
+  string $tcpopt,
+  string $instdir,
+
+
 ){
 
 
