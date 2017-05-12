@@ -59,7 +59,7 @@ class winsqlserver (
 
 
 
-){
+)inherits ::winsqlserver::params {
 
 
 class {'::winsqlserver::install':}
