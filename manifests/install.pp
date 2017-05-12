@@ -6,7 +6,7 @@ Boolean $install   = $::sqlserver::params::install,
 
 
 
-  )inherits ::profile::sqlserver::params_base {
+  )inherits ::sqlserver::params {
 
   # Ensure .NET3.5 is installled
   windowsfeature { 'NET-Framework-Core':
