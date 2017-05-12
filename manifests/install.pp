@@ -1,12 +1,12 @@
 
 #Ensure .NET and SQL are installed
 class winsqlserver::install (
+Boolean $install   = $::sqlserver::params::install,
 
 
 
 
-
-  ) {
+  )inherits ::profile::sqlserver::params_base {
 
   # Ensure .NET3.5 is installled
   windowsfeature { 'NET-Framework-Core':
