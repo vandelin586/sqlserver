@@ -1,12 +1,12 @@
 
 #Ensure .NET and SQL are installed
 class winsqlserver::install (
-Boolean $install   = $::sqlserver::params::install,
+#Boolean $install   = $::sqlserver::params::install,
 
 
 
 
-  )inherits ::sqlserver::params {
+  ) {
 
   # Ensure .NET3.5 is installled
   windowsfeature { 'NET-Framework-Core':
@@ -30,7 +30,7 @@ Boolean $install   = $::sqlserver::params::install,
 #  source                => 'c:/temp',
 #  sql_sysadmin_accounts => ['administrator'],
 }
-}
+
 
 
 
