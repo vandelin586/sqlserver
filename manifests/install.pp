@@ -1,13 +1,11 @@
 #Ensure .NET and SQL are installed
-class winsqlserver::install (
+class winsqlserver::install{
 #Boolean $install   = $::sqlserver::params::install,
   notify {'default':
-  message  => $sqluseracct,
-}
+    message  => $::sqluseracct,
+  }
 
-
-
-  ) {
+ {
 
   # Ensure .NET3.5 is installled
   windowsfeature { 'NET-Framework-Core':
@@ -30,6 +28,7 @@ class winsqlserver::install (
 #  features              => ['SQL'],
 #  source                => 'c:/temp',
 #  sql_sysadmin_accounts => ['administrator'],
+}
 }
 
 
