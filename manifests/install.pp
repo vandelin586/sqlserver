@@ -2,7 +2,7 @@
 class winsqlserver::install{
 #Boolean $install   = $::sqlserver::params::install,
   notify {'default':
-    message  => $sqluseracct,
+    message  => ${sqluseracct},
   }
 
 
