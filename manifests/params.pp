@@ -47,6 +47,9 @@
 # Copyright 2017 Jay Weaver, US Forest Service.
 #
 class winsqlserver::params {
+  $sql_ver          = 'SQL_2012'
+  $instance         = 'TEST'
+
   # Do ANY instances exist?
   if $::facts['sqlserver_instances'] != undef {
     # See if THIS instance exists on the server
