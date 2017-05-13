@@ -18,16 +18,16 @@
 class winsqlserver (
   String $sqluseracct,
   String $sqlsource,
-  array $instance,
-  string $sqlsvcacct,
-  string $sqlsvcpass,
-  string $tcpopt,
-  string $instdir,
-  string $sqlshrfol,
-  string $sqlshrwow,
-  string $sqldatadir,
-  string $sqldirlog,
-  string $sqlbackdir,
+  Array $instance,
+  String $sqlsvcacct,
+  String $sqlsvcpass,
+  String $tcpopt,
+  String $instdir,
+  String $sqlshrfol,
+  String $sqlshrwow,
+  String $sqldatadir,
+  String $sqldirlog,
+  String $sqlbackdir,
 
 
 
