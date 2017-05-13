@@ -17,7 +17,7 @@
 #
 class winsqlserver (
   String $sqluseracct,
-  string $sqlsource,
+  String $sqlsource,
   array $instance,
   string $sqlsvcacct,
   string $sqlsvcpass,
