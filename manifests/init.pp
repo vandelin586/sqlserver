@@ -35,7 +35,9 @@ class winsqlserver (
 )inherits ::winsqlserver::params {
 
 
-class {'::winsqlserver::install':}
+class {'::winsqlserver::install':
+
+sqluseracct  => $sqluseracct,}
 
 
 
