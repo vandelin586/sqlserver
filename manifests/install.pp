@@ -5,7 +5,7 @@ class winsqlserver::install{
     message  => $::sqluseracct,
   }
 
- {
+
 
   # Ensure .NET3.5 is installled
   windowsfeature { 'NET-Framework-Core':
@@ -29,7 +29,7 @@ class winsqlserver::install{
 #  source                => 'c:/temp',
 #  sql_sysadmin_accounts => ['administrator'],
 }
-}
+
 
 
 
