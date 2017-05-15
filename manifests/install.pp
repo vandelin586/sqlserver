@@ -1,18 +1,19 @@
-#Ensure .NET and SQL are installed
+# Ensure .NET and SQL are installed
 class winsqlserver::install($sqluseracct,
   $install = $winsqlserver::params::install)inherits winsqlserver::params {
 
-  notify {'default':
+    notify {'default':
     message  => $sqluseracct,
   }
+
+
 
   notify {'inst':
     message  => $install,
   }
 
 
-
-  # Ensure .NET3.5 is installled
+# Ensure .NET3.5 is installled
   windowsfeature { 'NET-Framework-Core':
     ensure => present,
   }
@@ -34,7 +35,7 @@ class winsqlserver::install($sqluseracct,
 #  features              => ['SQL'],
 #  source                => 'c:/temp',
 #  sql_sysadmin_accounts => ['administrator'],
-}
+
 
 
 
