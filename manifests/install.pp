@@ -1,9 +1,8 @@
 #Ensure .NET and SQL are installed
-class winsqlserver::install($sqluseracct){
+class winsqlserver::install($sqluseracct,
+  $install = $winsqlserver::params::install)inherits winsqlserver::params {
 
-    $install = winsqlserver::params::install
-#Boolean $install   = $::sqlserver::params::install,
-  notify {'default':
+    notify {'default':
     message  => $sqluseracct,
   }
 
