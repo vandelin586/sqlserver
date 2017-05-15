@@ -1,6 +1,5 @@
 #Ensure .NET and SQL are installed
-class winsqlserver::install($sqluseracct,
-  $inst){
+class winsqlserver::install($sqluseracct){
 
     $install = winsqlserver::params::install
 #Boolean $install   = $::sqlserver::params::install,
