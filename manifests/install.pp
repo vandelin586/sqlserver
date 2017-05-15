@@ -1,46 +1,45 @@
 # Ensure .NET and SQL are installed
-class winsqlserver::install($sqluseracct,$source,$features,$security_mode,$sql_sysadmin_accounts,$sql_svc_account,$sql_svc_password,
+class winsqlserver::install($sqluseracct,$source,$features,$security_mode,$sql_sysadmin_accounts,$sql_svc_account,$sql_svc_password,$TCPENABLED,$SQLTEMPDBLOGDIR,$SQLUSERDBLOGDIR,
+  $SQLBACKUPDIR,$SQLTEMPDBDIR,$INSTALLSQLDATADIR,$INSTALLSQLDATADIR,$INSTANCEDIR,$INSTALLSHAREDDIR,$INSTALLSHAREDWOWDIR,$UpdateEnabled,
   $install = $winsqlserver::params::install)inherits winsqlserver::params {
 
-     Install SQL Server
-      sqlserver_instance{ $instance :
-
-           install_switches      => {
-        'TCPENABLED'          => $enable_tcp,
-        'SQLTEMPDBLOGDIR'     => $dir_log,
-        'SQLUSERDBLOGDIR'     => $dir_log,
-        'SQLBACKUPDIR'        => $dir_backup,
-        'SQLTEMPDBDIR'        => $dir_tmp,
-        'INSTALLSQLDATADIR'   => $dir_data,
-        'INSTANCEDIR'         => $dir_inst,
-        'INSTALLSHAREDDIR'    => $dir_share,
-      'INSTALLSHAREDWOWDIR' => $dir_wow,
-        'UpdateEnabled'       => 0,
-          },
-      }
+  sqlserver_instance{ $instance:
 
 
+}
+    windowsfeature { 'NET-Framework-Core':
+    ensure => present,
+    }
 
 
-
+             => $enable_tcp,
+            'SQLTEMPDBLOGDIR'     => $dir_log,
+            'SQLUSERDBLOGDIR'     => $dir_log,
+            'SQLBACKUPDIR'        => $dir_backup,
+            'SQLTEMPDBDIR'        => $dir_tmp,
+            'INSTALLSQLDATADIR'   => $dir_data,
+            'INSTANCEDIR'         => $dir_inst,
+            'INSTALLSHAREDDIR'    => $dir_share,
+            'INSTALLSHAREDWOWDIR' => $dir_wow,
+            'UpdateEnabled'       => 0,
 
 
 
 
 
-    notify {'default':
-    message  => $sqluseracct,
-  }
 
-  notify {'inst':
-    message  => $install,
-  }
+
+  #  notify {'default':
+  #  message  => $sqluseracct,
+  #}
+
+  #notify {'inst':
+  #  message  => $install,
+  #}
 
 # Ensure .NET3.5 is installled
-  windowsfeature { 'NET-Framework-Core':
-    ensure => present,
+
   }
-}
 
 
 
