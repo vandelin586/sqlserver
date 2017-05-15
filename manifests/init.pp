@@ -28,7 +28,7 @@ class winsqlserver (
   String $sqldatadir,
   String $sqldirlog,
   String $sqlbackdir,
-  String $inst,
+
 
 
 
@@ -37,8 +37,7 @@ class winsqlserver (
 
 
   class {'::winsqlserver::install':
-
-sqluseracct  => $sqluseracct,
+    sqluseracct  => $sqluseracct,
   }
 
 
