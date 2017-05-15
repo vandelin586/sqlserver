@@ -2,7 +2,7 @@
 class winsqlserver::install($sqluseracct,
   $install = $winsqlserver::params::install)inherits winsqlserver::params {
 
-    notify {'default':
+  notify {'default':
     message  => $sqluseracct,
   }
 
@@ -15,6 +15,7 @@ class winsqlserver::install($sqluseracct,
   # Ensure .NET3.5 is installled
   windowsfeature { 'NET-Framework-Core':
     ensure => present,
+  }
 }
 
 
