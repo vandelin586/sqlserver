@@ -1,15 +1,10 @@
 # Ensure .NET and SQL are installed
-class winsqlserver::install($sqluseracct,
+class winsqlserver::install($sqluseracct,$source,$features,$security_mode,$sql_sysadmin_accounts,$sql_svc_account,$sql_svc_password,
   $install = $winsqlserver::params::install)inherits winsqlserver::params {
 
      Install SQL Server
       sqlserver_instance{ $instance :
-        source                => $source,
-        features              => $features,
-        security_mode         => $sec_mode,
-        sql_sysadmin_accounts => $sa_acct,
-        sql_svc_account       => $svc_acct,
-        sql_svc_password      => $svc_pwd,
+
            install_switches      => {
         'TCPENABLED'          => $enable_tcp,
         'SQLTEMPDBLOGDIR'     => $dir_log,

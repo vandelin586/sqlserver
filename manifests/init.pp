@@ -49,7 +49,3 @@ class winsqlserver (
 
 
 }
-
-
-
-sql_svc_password      => $svc_pwd,
