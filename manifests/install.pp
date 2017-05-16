@@ -1,5 +1,6 @@
 # Ensure .NET and SQL are installed
 class winsqlserver::install(
+  String $sqlinstance,
   String $sqluseracct,
   String $source,
   Array $features,
