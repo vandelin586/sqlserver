@@ -20,7 +20,7 @@ class winsqlserver (
   String $sqluseracct,
   String $sqlsource,
   Array $sqlinstance,
-  String $sqlfeatures,
+  Array $sqlfeatures,
   String $sqlsvcacct,
   String $sqlsvcpass,
   String $tcpopt,
@@ -37,7 +37,7 @@ class winsqlserver (
   class {'::winsqlserver::install':
     sqluseracct           => $sqluseracct,
     source                => $sqlsource,
-    sqlfeatures              => $sqlfeatures,
+    sqlfeatures           => $sqlfeatures,
     #security_mode         =>,
     #sql_sysadmin_accounts =>,
     #sql_svc_account       =>,
