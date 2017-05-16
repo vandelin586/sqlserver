@@ -13,7 +13,8 @@
 # Copyright
 # ---------
 #
-# Copyright 2017 AutoStructure
+# Copyright 2017
+#AutoStructure
 #
 class winsqlserver (
   String $sqluseracct,
@@ -29,21 +30,18 @@ class winsqlserver (
   String $sqldirlog,
   String $sqlbackdir,
 
-
-
-
-
 )inherits ::winsqlserver::params {
 
 
   class {'::winsqlserver::install':
     sqluseracct           => $sqluseracct,
-    source                =>$sqlsource,
+    source                => $sqlsource,
     features              =>,
     security_mode         =>,
     sql_sysadmin_accounts =>,
     sql_svc_account       =>,
     sql_svc_password      =>,
+    TCPENABLED            => $tcpopt,
   }
 
 
