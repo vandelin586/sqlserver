@@ -1,18 +1,33 @@
 # Ensure .NET and SQL are installed
-class winsqlserver::install($sqluseracct,$source,$features,$security_mode,$sql_sysadmin_accounts,$sql_svc_account,$sql_svc_password,$TCPENABLED,$SQLTEMPDBLOGDIR,$SQLUSERDBLOGDIR,
-  $SQLBACKUPDIR,$SQLTEMPDBDIR,$INSTALLSQLDATADIR,$INSTALLSQLDATADIR,$INSTANCEDIR,$INSTALLSHAREDDIR,$INSTALLSHAREDWOWDIR,$UpdateEnabled,
-  $install = $winsqlserver::params::install)inherits winsqlserver::params {
+class winsqlserver::install(
+  String $sqluseracct,
+  String $source,
+  Array $features,
+  String $security_mode,
+  String $sql_sysadmin_accounts,
+  String $sql_svc_account,
+  String $sql_svc_password,
+  String $tcpenabled,
+  String $sqltempdblogdir,
+  String $sqluserdblogdir,
+  String $sqlbackupdir,
+  String $sqltempdbdir,
+  String $installsqldatadir,
+  String $installsqldatadir,
+  String $instancedir,
+  String $installshareddir,
+  String $installsharewowdir,
+  Integer $updateenabled,
 
   sqlserver_instance{ $instance:
 
-
-}
+  }
     windowsfeature { 'NET-Framework-Core':
     ensure => present,
     }
 
 
-             => $enable_tcp,
+            'TCPENABLED'          => $enable_tcp,
             'SQLTEMPDBLOGDIR'     => $dir_log,
             'SQLUSERDBLOGDIR'     => $dir_log,
             'SQLBACKUPDIR'        => $dir_backup,
