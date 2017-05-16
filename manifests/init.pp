@@ -36,12 +36,12 @@ class winsqlserver (
   class {'::winsqlserver::install':
     sqluseracct           => $sqluseracct,
     source                => $sqlsource,
-    features              =>,
-    security_mode         =>,
-    sql_sysadmin_accounts =>,
-    sql_svc_account       =>,
-    sql_svc_password      =>,
-    TCPENABLED            => $tcpopt,
+    #features              =>,
+    #security_mode         =>,
+    #sql_sysadmin_accounts =>,
+    #sql_svc_account       =>,
+    #sql_svc_password      =>,
+    #TCPENABLED            => $tcpopt,
   }
 
 
