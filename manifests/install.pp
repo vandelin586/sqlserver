@@ -14,7 +14,6 @@ class winsqlserver::install(
   String $sqlbackupdir,
   String $sqltempdbdir,
   String $installsqldatadir,
-  String $installsqldatadir,
   String $instancedir,
   String $installshareddir,
   String $installsharewowdir,
