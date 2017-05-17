@@ -19,9 +19,9 @@ class winsqlserver::install(
   String $installshareddir,
   String $installsharewowdir,
   Integer $updateenabled,
-)include ::sqlserver::params{
+)inherits ::winsqlserver::params{
 
-  if (::sqlserver::params::install) {
+  if ($install) {
     # Download SQL Server .zip files and un-compress on server.
     $download = 'puppet:///modules/winsqlserver/sql_2012.ps1.ps1'
     exec { 'sqlserver_dnld':
