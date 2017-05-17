@@ -49,4 +49,3 @@ $Administrators | out-file -append -noclobber $output
 #(get-content $output) | ? {$_.trim() -ne ""} | set-content $output
 write-host "Post configuration file will be generated and stored at $output"
 write-host ""
-

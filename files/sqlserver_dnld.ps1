@@ -30,7 +30,7 @@ $wrk_dir = "C:\DBA\Software"
 mkdir $wrk_dir
 
 $destinationPath = "C:\DBA\Software\sqlserver.zip"
-$file_source = "http://artifactory.fdc.fs.usda.gov/artifactory/application-test-local/gov/usda/fs/puppet/sqlserver.zip"
+$file_source = "http://artifactory.azcender.com/artifactory/application-release-local/windows-server-local/com/puppet/sqlserver/sqlserver.zip"
 
 Get-WebPage -url $file_source -file $destinationPath -force
 
@@ -41,4 +41,3 @@ Add-Type -assembly "system.io.compression.filesystem"
 
 #-- REMOVE compressed file
 Remove-Item C:\DBA\Software\sqlserver.zip -Force #-Recurse
-
