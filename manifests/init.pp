@@ -17,7 +17,6 @@
 #AutoStructure
 #
 class winsqlserver (
-  String $sqlinstance,
   String $sqluseracct,
   String $sqlsource,
   Array $sqlinstance,
