@@ -19,7 +19,7 @@ class winsqlserver::install(
   String $installsharewowdir,
   Integer $updateenabled,
   String $install,
-){
+)inherits ::winsqlserver::params{
 
   if ($install) {
     # Download SQL Server .zip files and un-compress on server.
@@ -29,6 +29,8 @@ class winsqlserver::install(
       provider => powershell,
       timeout  => 7200,
     }
+  }
+}
 
 
 
