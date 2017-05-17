@@ -18,6 +18,7 @@ class winsqlserver::install(
   String $installshareddir,
   String $installsharewowdir,
   Integer $updateenabled,
+  String $install,
 ){
 
   if ($install) {

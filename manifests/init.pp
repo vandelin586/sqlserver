@@ -30,17 +30,21 @@ class winsqlserver (
   String $sqldatadir,
   String $sqldirlog,
   String $sqlbackdir,
+  String $install,
 
-)inherits ::winsqlserver::params
+)inherits ::winsqlserver::params{
 
 
   class {'::winsqlserver::install':
     sqluseracct           => $sqluseracct,
     source                => $sqlsource,
     sqlfeatures           => $sqlfeatures,
+    install                => $install,
     #security_mode         =>,
     #sql_sysadmin_accounts =>,
     #sql_svc_account       =>,
     #sql_svc_password      =>,
     #TCPENABLED            => $tcpopt,
   }
+
+}
