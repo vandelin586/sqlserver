@@ -21,9 +21,9 @@ class winsqlserver::install(
   Integer $updateenabled,
 )include ::sqlserver::params
 
-  if ($install) {
+  if (::sqlserver::params::install) {
     # Download SQL Server .zip files and un-compress on server.
-    $download = "puppet:///modules/winsqlserver/${sql_version}.ps1"
+    $download = 'puppet:///modules/winsqlserver/sql_2012.ps1.ps1'
     exec { 'sqlserver_dnld':
       command  => file($download),
       provider => powershell,
