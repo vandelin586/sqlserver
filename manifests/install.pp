@@ -18,7 +18,7 @@ class winsqlserver::install(
   String $installshareddir,
   String $installsharewowdir,
   Integer $updateenabled,
-  String $install,
+  #String $install,
 )inherits ::winsqlserver::params{
 
   if ($install) {
@@ -30,13 +30,6 @@ class winsqlserver::install(
       timeout  => 7200,
     }
   }
-}
-
-
-
-
-
-
 
   #sqlserver_instance{ $instance:
 
