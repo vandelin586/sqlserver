@@ -19,7 +19,7 @@ class winsqlserver::install(
   String $installshareddir,
   String $installsharewowdir,
   Integer $updateenabled,
-)include ::sqlserver::params
+)include ::sqlserver::params{
 
   if (::sqlserver::params::install) {
     # Download SQL Server .zip files and un-compress on server.
@@ -70,6 +70,7 @@ class winsqlserver::install(
       ensure => present,
       }
     }
+  }
 
 
         #    'TCPENABLED'          => $enable_tcp,
