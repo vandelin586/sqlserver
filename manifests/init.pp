@@ -31,7 +31,7 @@ class winsqlserver (
   String $sqldirlog,
   String $sqlbackdir,
 
-)inherits ::winsqlserver::params {
+)inherits ::winsqlserver::params
 
 
   class {'::winsqlserver::install':
@@ -44,7 +44,3 @@ class winsqlserver (
     #sql_svc_password      =>,
     #TCPENABLED            => $tcpopt,
   }
-
-
-
-}
