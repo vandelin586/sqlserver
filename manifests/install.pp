@@ -19,7 +19,7 @@ class winsqlserver::install(
   String $installshareddir,
   String $installsharewowdir,
   Integer $updateenabled,
-)inherits ::winsqlserver::params{
+){
 
   if ($install) {
     # Download SQL Server .zip files and un-compress on server.
