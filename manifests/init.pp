@@ -30,7 +30,7 @@ class winsqlserver (
   String $sqldatadir,
   String $sqldirlog,
   String $sqlbackdir,
-  String $install,
+#  String $install,
 
 )inherits ::winsqlserver::params{
 
