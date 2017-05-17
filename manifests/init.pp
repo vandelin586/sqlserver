@@ -30,6 +30,7 @@ class winsqlserver (
   String $sqldatadir,
   String $sqldirlog,
   String $sqlbackdir,
+  String $securemode,
 #  String $install,
 
 ){
