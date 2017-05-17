@@ -70,7 +70,6 @@ class winsqlserver::install(
       ensure => present,
       }
     }
-  }
 
 
         #    'TCPENABLED'          => $enable_tcp,
