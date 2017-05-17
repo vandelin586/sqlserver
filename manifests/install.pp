@@ -5,7 +5,6 @@ class winsqlserver::install(
   String $source,
   Array $features,
   String $security_mode,
-  String $sql_sysadmin_accounts,
   String $sql_svc_account,
   String $sql_svc_password,
   String $tcpenabled,
