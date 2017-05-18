@@ -1,7 +1,7 @@
 #Does existing instance exist
 class winsqlserver::params {
-  $sql_ver          = 'SQL_2012'
-  $instance         = 'TEST'
+  #$sql_ver          = 'SQL_2012'
+  #$instance         = 'TEST'
 
   # Do ANY instances exist?
   if $::facts['sqlserver_instances'] != undef {
