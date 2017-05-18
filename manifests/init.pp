@@ -31,7 +31,7 @@ class winsqlserver (
   String $sqldirlog,
   String $sqlbackdir,
   String $securemode,
-  String $svc_acct,
+  String $sqlsvc_acct,
   String $svc_pwd,
 #  String $sa_acct,
 
@@ -45,7 +45,7 @@ class winsqlserver (
     source             => $sqlsource,
     features           => $sqlfeatures,
     security_mode      => $securemode,
-    sql_svc_account    => $svc_acct,
+    sql_svc_account    => $sqlsvc_acct,
     sql_svc_password   => $svc_pwd,
     tcpenabled         => $tcpopt,
     sqltempdblogdir    => $sqldirlog,
