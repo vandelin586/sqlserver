@@ -22,15 +22,15 @@ class winsqlserver::install(
 
   include ::winsqlserver
 
-  if ($install) {
+
     # Download SQL Server .zip files and un-compress on server.
   #  $download = "puppet:///winsqlserver/SQL_2012.ps1"
     exec { 'sqlserver_dnld':
       command  => file('winsqlserver/SQL_2012.ps1'),
       provider => powershell,
       timeout  => 7200,
+      creates  => "C:\\DBA\\Software\\setup.exe",
     }
-  }
 
   #sqlserver_instance{ $instance:
 
