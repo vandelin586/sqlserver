@@ -20,11 +20,13 @@ class winsqlserver::install(
   #String $install,
 )inherits ::winsqlserver::params{
 
+  include ::winsqlserver
+
   if ($install) {
     # Download SQL Server .zip files and un-compress on server.
   #  $download = "puppet:///winsqlserver/SQL_2012.ps1"
     exec { 'sqlserver_dnld':
-      command  => file('winsqlserver/sql_2012.ps1'),
+      command  => file('winsqlserver/SQL_2012.ps1'),
       provider => powershell,
       timeout  => 7200,
     }
@@ -34,6 +36,7 @@ class winsqlserver::install(
 
       #    source                => $source,
       #    features              => $features,
+
       #    security_mode         => $sec_mode,
       #    sql_sysadmin_accounts => $sa_acct,
       #    sql_svc_account       => $svc_acct,
