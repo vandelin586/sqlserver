@@ -36,18 +36,27 @@ class winsqlserver (
   String $sa_acct,
 
 
+
 ){
 
 
   class {'::winsqlserver::install':
-    sqluseracct           => $sqluseracct,
-    source                => $sqlsource,
-    features              => $sqlfeatures,
-    security_mode         => $securemode,
-    sql_svc_account       => $svc_acct,
-    sql_svc_password      => $svc_pwd,
-    tcpenabled            => $tcpopt,
-    sqltempdblogdir       => $
+    sqluseracct        => $sqluseracct,
+    source             => $sqlsource,
+    features           => $sqlfeatures,
+    security_mode      => $securemode,
+    sql_svc_account    => $svc_acct,
+    sql_svc_password   => $svc_pwd,
+    tcpenabled         => $tcpopt,
+    sqltempdblogdir    => $sqldirlog,
+    sqluserdblogdir    => $sqldirlog,
+    sqlbackupdir       => $dir_back,
+    sqltempdbdir       => $dir_tmp,
+    installsqldatadir  => $sqldatadir,
+    instancedir        => $instdir,
+    installshareddir   => $sqlshrfol,
+    installsharewowdir => $sqlshrwow,
+    updateenabled      => 0,
 
   }
 
