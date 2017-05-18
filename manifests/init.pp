@@ -31,7 +31,6 @@ class winsqlserver (
   String $sqlbackdir,
   String $securemode,
   String $sqlsvcacct,
-  
   #  String $sa_acct,
 
 
