@@ -18,7 +18,7 @@ class winsqlserver::install(
   String $installsharewowdir,
   Integer $updateenabled,
   #String $install,
-)inherits ::winsqlserver::params{
+){
 
   include ::winsqlserver
 
@@ -67,31 +67,3 @@ class winsqlserver::install(
       ensure => present,
       }
     }
-
-
-        #    'TCPENABLED'          => $enable_tcp,
-        #   'SQLTEMPDBLOGDIR'     => $dir_log,
-        #    'SQLUSERDBLOGDIR'     => $dir_log,
-        #    'SQLBACKUPDIR'        => $dir_backup,
-        #    'SQLTEMPDBDIR'        => $dir_tmp,
-        #    'INSTALLSQLDATADIR'   => $dir_data,
-        #    'INSTANCEDIR'         => $dir_inst,
-        #    'INSTALLSHAREDDIR'    => $dir_share,
-        #    'INSTALLSHAREDWOWDIR' => $dir_wow,
-        #    'UpdateEnabled'       => 0,
-
-
-
-
-
-
-
-
-
-  #  notify {'default':
-  #  message  => $sqluseracct,
-  #}
-
-  #notify {'inst':
-  #  message  => $install,
-  #}
