@@ -1,4 +1,4 @@
-# Ensure .NET and SQL are installed
+# Ensure sql install , ensure instace(s) are setup
 class winsqlserver::install(
   Array $sqlinstance,
   String $sqluseracct,
@@ -17,14 +17,12 @@ class winsqlserver::install(
   String $installshareddir,
   String $installsharewowdir,
   Integer $updateenabled,
-  #String $install,
 ){
 
   include ::winsqlserver
 
 
     # Download SQL Server .zip files and un-compress on server.
-  #  $download = "puppet:///winsqlserver/SQL_2012.ps1"
     exec { 'sqlserver_dnld':
       command  => file('winsqlserver/SQL_2012.ps1'),
       provider => powershell,
@@ -32,38 +30,7 @@ class winsqlserver::install(
       creates  => "C:\\DBA\\Software\\setup.exe",
     }
 
-  #sqlserver_instance{ $instance:
-
-      #    source                => $source,
-      #    features              => $features,
-
-      #    security_mode         => $sec_mode,
-      #    sql_sysadmin_accounts => $sa_acct,
-      #    sql_svc_account       => $svc_acct,
-      #    sql_svc_password      => $svc_pwd,
-      #       install_switches      => {
-      #    'TCPENABLED'          => $enable_tcp,
-      #    'SQLTEMPDBLOGDIR'     => $dir_log,
-      #    'SQLUSERDBLOGDIR'     => $dir_log,
-      #    'SQLBACKUPDIR'        => $dir_backup,
-      #    'SQLTEMPDBDIR'        => $dir_tmp,
-      #    'INSTALLSQLDATADIR'   => $dir_data,
-      #    'INSTANCEDIR'         => $dir_inst,
-      #    'INSTALLSHAREDDIR'    => $dir_share,
-      #    'INSTALLSHAREDWOWDIR' => $dir_wow,
-      #    'UpdateEnabled'       => 0,
-      #      },
-      #  }
-      #  sqlserver_features { 'Generic Features':
-      #    source   => $source,
-      #    features => ['IS', 'MDS', 'SSMS'],
-      #    install_switches   => {
-      #    'UpdateEnabled'  => 0,
-          #}
-          #}
-
-
       windowsfeature { 'NET-Framework-Core':
-      ensure => present,
+        ensure => present,
       }
     }

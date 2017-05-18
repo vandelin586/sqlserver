@@ -14,7 +14,7 @@
 # ---------
 #
 # Copyright 2017
-#AutoStructure
+# AutoStructure
 #
 class winsqlserver (
   String $sqluseracct,
@@ -32,10 +32,6 @@ class winsqlserver (
   String $securemode,
   String $sqlsvcacct,
   String $sqldirtmp,
-  #  String $sa_acct,
-
-
-
 ){
 
 
