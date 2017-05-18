@@ -33,7 +33,7 @@ class winsqlserver (
   String $securemode,
   String $svc_acct,
   String $svc_pwd,
-  String $sa_acct,
+#  String $sa_acct,
 
 
 
