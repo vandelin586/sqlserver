@@ -34,7 +34,7 @@ mkdir $wrk_dir
 #--
 $destinationPath = "C:\Binary\SQL2012wSP3_64bit.zip"
 
-$file_source = "http://artifactory.azcender.com/artifactory/application-release-local/windows-server-local/com/puppet/sqlserver/SQL2012wSP3_64bit.zip"
+$file_source = "http://artifactory.fdc.fs.usda.gov/artifactory/windows-server-local/com/puppet/sqlserver/SQL2012wSP3_64bit.zip"
 
 Get-WebPage -url $file_source -file $destinationPath -force
 
@@ -50,7 +50,7 @@ mkdir $wrk_dir
 
 $destinationPath = "C:\Binary\SQL2012_Post_Install.zip"
 
-$file_source = "http://artifactory.azcender.com/artifactory/application-release-local/windows-server-local/com/puppet/sqlserver/SQL2012_Post_Install.zip"
+$file_source = "http://artifactory.fdc.fs.usda.gov/artifactory/windows-server-local/com/puppet/sqlserver/SQL2012_Post_Install.zip"
 
 Get-WebPage -url $file_source -file $destinationPath -force
 
