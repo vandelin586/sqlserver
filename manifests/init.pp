@@ -31,7 +31,10 @@ class winsqlserver (
   String $sqldirlog,
   String $sqlbackdir,
   String $securemode,
-#  String $install,
+  String $svc_acct,
+  String $svc_pwd,
+  String $sa_acct,
+
 
 ){
 
@@ -40,12 +43,12 @@ class winsqlserver (
     sqluseracct           => $sqluseracct,
     source                => $sqlsource,
     features              => $sqlfeatures,
-    #install                => $install,
-    #security_mode         =>,
-    #sql_sysadmin_accounts =>,
-    #sql_svc_account       =>,
-    #sql_svc_password      =>,
-    #TCPENABLED            => $tcpopt,
+    security_mode         => $securemode,
+    sql_svc_account       => $svc_acct,
+    sql_svc_password      => $svc_pwd,
+    tcpenabled            => $tcpopt,
+    sqltempdblogdir       => $
+
   }
 
 }
