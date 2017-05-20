@@ -28,27 +28,27 @@ class winsqlserver::install(
       provider => powershell,
       timeout  => 7200,
       creates  => "C:\\DBA\\Software\\setup.exe",
-      before   => sqlserver_instance[$instance],
+      before   => sqlserver_instance[$sqlinstance],
     }
 
     # Install SQL Server
-    sqlserver_instance{ $instance :
+    sqlserver_instance{ $sqlinstance :
       source                => $source,
       features              => $features,
       security_mode         => $security_mode,
-      sql_sysadmin_accounts => $sa_acct,
-      sql_svc_account       => $svc_acct,
-      sql_svc_password      => $svc_pwd,
+      sql_sysadmin_accounts => $sqluseracct,
+      sql_svc_account       => $sql_svc_account,
+      sql_svc_password      => $sql_svc_password,
       install_switches      => {
-        'TCPENABLED'          => $enable_tcp,
-        'SQLTEMPDBLOGDIR'     => $dir_log,
-        'SQLUSERDBLOGDIR'     => $dir_log,
-        'SQLBACKUPDIR'        => $dir_backup,
-        'SQLTEMPDBDIR'        => $dir_tmp,
-        'INSTALLSQLDATADIR'   => $dir_data,
-        'INSTANCEDIR'         => $dir_inst,
-        'INSTALLSHAREDDIR'    => $dir_share,
-        'INSTALLSHAREDWOWDIR' => $dir_wow,
+        'TCPENABLED'          => $tcpenabled,
+        'SQLTEMPDBLOGDIR'     => $sqltempdblogdir,
+        'SQLUSERDBLOGDIR'     => $sqltempdblogdir,
+        'SQLBACKUPDIR'        => $sqlbackupdir,
+        'SQLTEMPDBDIR'        => $sqltempdbdir,
+        'INSTALLSQLDATADIR'   => $installsqldatadir,
+        'INSTANCEDIR'         => $instancedir,
+        'INSTALLSHAREDDIR'    => $installshareddir,
+        'INSTALLSHAREDWOWDIR' => $installsharewowdir,
         'UpdateEnabled'       => 0,
       },
     }
