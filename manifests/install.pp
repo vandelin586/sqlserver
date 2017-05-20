@@ -28,7 +28,7 @@ class winsqlserver::install(
       provider => powershell,
       timeout  => 7200,
       creates  => "C:\\DBA\\Software\\setup.exe",
-      before   => sqlserver_instance[$sqlinstance],
+      #before   => sqlserver_instance[$sqlinstance],
     }
 
     # Install SQL Server
