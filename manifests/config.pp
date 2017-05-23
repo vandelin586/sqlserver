@@ -5,7 +5,7 @@ class winsqlserver::config(
 
     user { 'sql':
     ensure   => present,
-    password => 'ServerService123!@#'
+    password => 'ServerService123!@#',
     groups   => [ 'Administrators' ],
     }
 
