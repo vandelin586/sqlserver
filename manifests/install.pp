@@ -39,7 +39,6 @@ class winsqlserver::install(
       sql_svc_account       => $sqluseracct,
       sql_svc_password      => $sql_svc_password,
       install_switches      => {
-        'service_ensure'      => 'automatic',
         'TCPENABLED'          => $tcpenabled,
         'SQLTEMPDBLOGDIR'     => $sqltempdblogdir,
         'SQLUSERDBLOGDIR'     => $sqltempdblogdir,
