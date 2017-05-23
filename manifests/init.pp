@@ -35,7 +35,7 @@ class winsqlserver (
 ){
 
   class {'::winsqlserver::config':
-    usracct => $sqluseracct,
+    usracct => $sqlsvcacct,
     usrpw   => $sqlsvcpass,
 
 }
