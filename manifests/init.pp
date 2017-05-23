@@ -46,7 +46,7 @@ class winsqlserver (
     source             => $sqlsource,
     features           => $sqlfeatures,
     sqlinstance        => $sqlinstance,
-  #  security_mode      => $securemode,
+    security_mode      => $securemode,
     sql_svc_account    => $sqluseracct,
     sql_svc_password   => $sqlsvcpass,
     tcpenabled         => $tcpopt,
