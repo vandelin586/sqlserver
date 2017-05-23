@@ -1,12 +1,11 @@
 
 #config the server
 class winsqlserver::config(
-  String $winuser,
 ){
 
     group { 'Administrators':
     ensure  => present,
-    members => [ $winuser ],
+    members => [ 'sql' ],
     }
 
 
