@@ -29,14 +29,14 @@ class winsqlserver (
   String $sqldatadir,
   String $sqldirlog,
   String $sqlbackdir,
-#  String $securemode,
+[Optional] String $securemode,
   String $sqlsvcacct,
   String $sqldirtmp,
 ){
 
   class {'::winsqlserver::config':
     usracct => $sqlsvcacct,
-    userpw   => $sqlsvcpass,
+    userpw  => $sqlsvcpass,
 
 }
 
