@@ -3,9 +3,9 @@
 class winsqlserver::config(
 ){
 
-    group { 'Administrators':
+    user { 'sql':
     ensure  => present,
-    members => [ 'sql' ],
+    groups => [ 'Administrators' ],
     }
 
 
