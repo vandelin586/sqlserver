@@ -35,9 +35,9 @@ class winsqlserver::install(
       source                => $source,
       features              => $features,
       #security_mode         => $security_mode,
-      sql_sysadmin_accounts => 'sql',
-      sql_svc_account       => 'sql',
-      sql_svc_password      => 'ServerService123!@#',
+      sql_sysadmin_accounts => $sqluseracct,
+      sql_svc_account       => $sqluseracct,
+      sql_svc_password      => $sql_svc_password,
       install_switches      => {
         'TCPENABLED'          => $tcpenabled,
         'SQLTEMPDBLOGDIR'     => $sqltempdblogdir,
