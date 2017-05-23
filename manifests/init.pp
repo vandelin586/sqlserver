@@ -29,7 +29,7 @@ class winsqlserver (
   String $sqldatadir,
   String $sqldirlog,
   String $sqlbackdir,
-[Optional] String $securemode,
+  String $securemode,
   String $sqlsvcacct,
   String $sqldirtmp,
 ){
