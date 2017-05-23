@@ -37,7 +37,7 @@ class winsqlserver (
   class {'::winsqlserver::config':
     winuser => $sqluseracct,
 
-}
+} ->
 
 
   class {'::winsqlserver::install':
