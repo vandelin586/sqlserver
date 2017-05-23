@@ -34,6 +34,11 @@ class winsqlserver (
   String $sqldirtmp,
 ){
 
+  class {'::winsqlserver::config':
+    winuser => $sqluseracct,
+
+}
+
 
   class {'::winsqlserver::install':
     sqluseracct        => $sqluseracct,

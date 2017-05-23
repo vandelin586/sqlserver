@@ -28,7 +28,6 @@ class winsqlserver::install(
       provider => powershell,
       timeout  => 7200,
       creates  => "C:\\DBA\\Software\\setup.exe",
-      #before   => sqlserver_instance[$sqlinstance],
     }
 
     # Install SQL Server
@@ -36,9 +35,9 @@ class winsqlserver::install(
       source                => $source,
       features              => $features,
       #security_mode         => $security_mode,
-      sql_sysadmin_accounts => 'EDC\pvandr01',
-      sql_svc_account       => 'EDC\pvandr01',
-      sql_svc_password      => 'secret',
+      sql_sysadmin_accounts => 'sql',
+      sql_svc_account       => 'sql',
+      sql_svc_password      => 'ServerService123!@#',
       install_switches      => {
         'TCPENABLED'          => $tcpenabled,
         'SQLTEMPDBLOGDIR'     => $sqltempdblogdir,
