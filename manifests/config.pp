@@ -1,12 +1,13 @@
 
 #config the server
 class winsqlserver::config(
-  String $usracct
+  String $usracct,
+  String $userpw,
 ){
 
-    user { '':
+    user { $usracct:
     ensure   => present,
-    password => '',
+    password => $userpw,
     groups   => [ 'Administrators' ],
     }
 
