@@ -62,4 +62,6 @@ class winsqlserver (
 
   }
 
+  -> class {'::winsqlserver::service':}
+
 }

@@ -2,8 +2,8 @@
 class winsqlserver::service {
 
 service { 'MSSQL$TEST':
-  ensure => running,
-  enable => true,
+  ensure     => running,
+  enable     => true,
   hasrestart => true,
   hasstatus  => true,
   # pattern => 'name',
