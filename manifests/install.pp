@@ -34,7 +34,7 @@ class winsqlserver::install(
     sqlserver_instance{ $sqlinstance :
       source                => $source,
       features              => $features,
-      service_ensure        => 'automatic'
+      service_ensure        => 'automatic',
       security_mode         => $security_mode,
       sql_sysadmin_accounts => $sqluseracct,
       sql_svc_account       => $sqluseracct,
