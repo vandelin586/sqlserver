@@ -4,7 +4,7 @@ class winsqlserver::config(
 ){
 
     user { 'sql':
-    ensure  => present,
+    ensure => present,
     groups => [ 'Administrators' ],
     }
 
