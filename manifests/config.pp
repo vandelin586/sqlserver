@@ -6,9 +6,9 @@ class winsqlserver::config(
 ){
 
     user { $usracct:
-    ensure   => present,
-    password => $userpw,
-    groups   => [ 'Administrators' ],
+      ensure   => present,
+      password => $userpw,
+      groups   => [ 'Administrators' ],
     }
 
 }
