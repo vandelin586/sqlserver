@@ -1,6 +1,6 @@
 # Ensure sql install , ensure instace(s) are setup
 class winsqlserver::install(
-  Array $sqlinstance,
+  String $sqlinstance,
   String $sqluseracct,
   String $source,
   Array $features,

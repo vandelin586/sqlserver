@@ -19,7 +19,7 @@
 class winsqlserver (
   String $sqluseracct,
   String $sqlsource,
-  Array $sqlinstance,
+  String $sqlinstance,
   Array $sqlfeatures,
   String $sqlsvcpass,
   String $tcpopt,
