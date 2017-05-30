@@ -1,13 +1,13 @@
 #service
 class winsqlserver::service {
 
-service { 'MSSQL$TEST':
-  ensure     => running,
-  enable     => true,
-  hasrestart => true,
-  hasstatus  => true,
+  service { 'MSSQL$TEST':
+    ensure     => running,
+    enable     => true,
+    hasrestart => true,
+    hasstatus  => true,
   # pattern => 'name',
-}
+  }
 #service { 'SQLBrowser':
 #  ensure => running,
 #  enable => true,

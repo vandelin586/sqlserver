@@ -5,10 +5,10 @@ class winsqlserver::config(
   String $userpw,
 ){
 
-    user { $usracct:
-      ensure   => present,
-      password => $userpw,
-      groups   => [ 'Administrators' ],
-    }
+  user { $usracct:
+    ensure   => present,
+    password => $userpw,
+    groups   => [ 'Administrators' ],
+  }
 
 }
