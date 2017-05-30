@@ -22,37 +22,37 @@ class winsqlserver::install(
   include ::winsqlserver
 
 
-    # Download SQL Server .zip files and un-compress on server.
-    exec { 'sqlserver_dnld':
-      command  => file('winsqlserver/SQL_2012.ps1'),
-      provider => powershell,
-      timeout  => 7200,
-      creates  => "C:\\DBA\\Software\\setup.exe",
-    }
+  # Download SQL Server .zip files and un-compress on server.
+  exec { 'sqlserver_dnld':
+    command  => file('winsqlserver/SQL_2012.ps1'),
+    provider => powershell,
+    timeout  => 7200,
+    creates  => "C:\\DBA\\Software\\setup.exe",
+  }
 
     # Install SQL Server
-    sqlserver_instance{ $sqlinstance :
-      source                => $source,
-      features              => $features,
+  sqlserver_instance{ $sqlinstance :
+    source                => $source,
+    features              => $features,
   #    security_mode         => $security_mode,
-      sql_sysadmin_accounts => $sqluseracct,
-      sql_svc_account       => $sqluseracct,
-      sql_svc_password      => $sql_svc_password,
-      install_switches      => {
-        'TCPENABLED'          => $tcpenabled,
-        'SQLTEMPDBLOGDIR'     => $sqltempdblogdir,
-        'SQLUSERDBLOGDIR'     => $sqltempdblogdir,
-        'SQLBACKUPDIR'        => $sqlbackupdir,
-        'SQLTEMPDBDIR'        => $sqltempdbdir,
-        'INSTALLSQLDATADIR'   => $installsqldatadir,
-        'INSTANCEDIR'         => $instancedir,
-        'INSTALLSHAREDDIR'    => $installshareddir,
-        'INSTALLSHAREDWOWDIR' => $installsharewowdir,
-        'UpdateEnabled'       => 0,
-      },
-    }
+    sql_sysadmin_accounts => $sqluseracct,
+    sql_svc_account       => $sqluseracct,
+    sql_svc_password      => $sql_svc_password,
+    install_switches      => {
+      'TCPENABLED'          => $tcpenabled,
+      'SQLTEMPDBLOGDIR'     => $sqltempdblogdir,
+      'SQLUSERDBLOGDIR'     => $sqltempdblogdir,
+      'SQLBACKUPDIR'        => $sqlbackupdir,
+      'SQLTEMPDBDIR'        => $sqltempdbdir,
+      'INSTALLSQLDATADIR'   => $installsqldatadir,
+      'INSTANCEDIR'         => $instancedir,
+      'INSTALLSHAREDDIR'    => $installshareddir,
+      'INSTALLSHAREDWOWDIR' => $installsharewowdir,
+      'UpdateEnabled'       => 0,
+    },
+  }
 
-      windowsfeature { 'NET-Framework-Core':
-        ensure => present,
-      }
-    }
+  windowsfeature { 'NET-Framework-Core':
+    ensure => present,
+  }
+}
